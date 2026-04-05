@@ -196,3 +196,88 @@
                     </div>
                 </div>
             </div>
+
+            <a href="#project" class="scroll-v">
+                <div class="chevron"></div>
+            </a>
+        </section>
+
+        <section id="project">
+            <div class="glass-card project-card hover-colorful">
+                <div class="project-content">
+                    <p class="sub-label">Know Our Project</p>
+                    <h2 class="gradient-title" style="font-size: 3.5rem;">WANDEE</h2>
+                    <p class="description" style="max-width: 700px; margin: 20px auto;">
+                        Perancangan Sistem Berbasis Web untuk Pencarian Teman Traveling Berdasarkan Preferensi Pengguna. Sistem ini dirancang untuk membantu para traveler menemukan teman perjalanan yang sesuai dengan preferensi mereka, seperti tujuan, minat, dan gaya perjalanan.
+
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JAVASCRIPT</span>
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+
+        <footer>
+            COPYRIGHT &copy; 2026 KELOMPOK 1. ALL RIGHTS RESERVED.
+        </footer>
+    </div>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('intro-loader');
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 1000);
+            }, 2500);
+        });
+
+        const starsContainer = document.getElementById('starfield');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            starsContainer.appendChild(star);
+        }
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a");
+        const wrapper = document.querySelector(".main-wrapper");
+        
+        wrapper.addEventListener("scroll", () => {
+            let current = "";
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                
+                if (wrapper.scrollTop >= sectionTop - 100) {
+                    current = section.getAttribute("id");
+                }
+            });
+            
+            // mapping
+            if (current === "home") {
+                current = "home";
+            } else if (current === "project") {
+                current = "project";
+            } else {
+                current = "the-team";
+            }
+            
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
