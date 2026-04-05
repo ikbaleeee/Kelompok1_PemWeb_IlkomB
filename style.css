@@ -324,3 +324,113 @@ box-shadow:
     font-size: 12px;
     opacity: 0.6;
 }
+
+.npm-badge {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    background: #22c55e1a; 
+    border: 1px solid var(--border);
+    padding: 6px 20px; 
+    border-radius: 50px; 
+    margin: 10px 0;
+}
+
+.npm-prefix { 
+    color: var(--primary-green); 
+    font-weight: 800; 
+    font-size: 11px; 
+}
+
+
+/*Overview Project*/
+.project-card { 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.tech-stack { 
+    display: flex; 
+    gap: 15px; 
+    justify-content: center; 
+    margin-top: 30px; 
+}
+
+.tech-tag {
+    padding: 10px 25px; 
+    border-radius: 12px; 
+    background: #ffffff0d;
+    border: 1px solid var(--border); 
+    font-size: 12px; 
+    font-weight: 600; 
+    color: var(--primary-green);
+    transition: 0.3s
+}
+
+.tech-tag:hover { 
+    transform: scale(1.03)translateY(-10px); 
+    border-color: var(--primary-green); 
+    filter: brightness(1.2); 
+}
+
+/*Media Sosial*/
+.social-buttons { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 20px; 
+}
+
+.btn-social {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    text-decoration: none; 
+    color: white;
+    background: #ffffff0d; 
+    padding: 12px 25px; 
+    border-radius: 12px; 
+    border: 1px solid #ffffff1a; 
+    transition: 0.3s;
+}
+
+.btn-social:hover { 
+    border-color: var(--primary-green); 
+    transform: translateY(-3px); 
+}
+
+.social-icon { 
+    width: 18px; 
+    filter: invert(1); 
+}
+
+
+/*Footer dan Scroll Icon*/
+.scroll-v { 
+    position: absolute; 
+    bottom: 40px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.chevron { width: 20px; 
+    height: 20px; 
+    border-right: 3px solid var(--primary-green); 
+    border-bottom: 3px solid var(--primary-green); 
+    transform: rotate(45deg); 
+    animation: bounceV 2s infinite; 
+}
+
+@keyframes bounceV { 
+    0%, 20%, 50%, 80%, 100% { transform: translate(0, 0); } 
+    40% { transform: translate(10px, 10px); } 
+}
+
+footer { padding: 40px; 
+    text-align: center; 
+    font-size: 10px; 
+    opacity: 0.3; 
+    border-top: 1px solid var(--border); 
+    scroll-snap-align: end; 
+}
